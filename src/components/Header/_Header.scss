@@ -19,10 +19,10 @@
     text-decoration: none;
     font-weight: 700;
     font-size: 1.2rem;
-    color: var(--second);
+    color: var(--principal);
     transition: color ease-in-out 0.5s, transform ease-in-out 0.5s;
     &:hover {
-      color: var(--principal);
+      color: var(--fifth);
       transform: scale(1.2);
     }
   }
