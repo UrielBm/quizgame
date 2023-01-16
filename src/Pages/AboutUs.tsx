@@ -7,11 +7,11 @@ const AboutUs = () => {
       <div className="wrapperAboutUs">
         <p>
           Acerca del proyecto de encuestados: este fue creado como proyecto
-          final para probar, diferentes conceptos y teclogias para el bootcamp
+          final para probar, diferentes conceptos y tecnologias para el bootcamp
           de Código facilito Front-End.
         </p>
         <p>
-          Conciste el proyecto de un juego tipo "Quiz" por categorias donde cada
+          Consiste el proyecto de un juego tipo "Quiz" por categorias donde cada
           categoria contiene diferentes preguntas, mientras más aciertes mejor
           sera tu puntaje el cual puedes registrar y visualizar el top 5 mejores
           puntajes según la categoria.
