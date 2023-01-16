@@ -1,0 +1,36 @@
+.title {
+  font-family: "Ultra", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  transform: rotate(355deg);
+}
+.shake {
+  color: var(--principal);
+  transition: color 0.8s ease-in-out;
+  &:hover {
+    color: var(--second);
+    animation: 0.7s myshake infinite alternate;
+  }
+}
+@keyframes myshake {
+  0% {
+    transform: skewX(-20deg);
+  }
+  5% {
+    transform: skewX(20deg);
+  }
+  10% {
+    transform: skewX(-20deg);
+  }
+  15% {
+    transform: skewX(20deg);
+  }
+  20% {
+    transform: skewX(0deg);
+  }
+  100% {
+    transform: skewX(0deg);
+  }
+}
