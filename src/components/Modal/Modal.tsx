@@ -15,7 +15,7 @@ const Modal = ({ text, statusCode }: myModalInterface) => {
             X
           </button>
         </div>
-        <img src={Logo} className="modalLogo" />
+        <img src={Logo} className="modalLogo" alt="logo" />
         <div>
           <p>{text}</p>
           <div>
