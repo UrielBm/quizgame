@@ -1,0 +1,46 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.9);
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.modal__wrapper {
+  background-color: var(--third);
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 45rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 4fr;
+  max-height: 36rem;
+  gap: 1rem;
+  text-align: center;
+  color: var(--principal);
+}
+.modal__wrapperButton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal__closeButton {
+  background: none;
+  border: none;
+  color: var(--principal);
+  font-size: 1.5rem;
+  padding: 1rem 1rem 0 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.modalLogo {
+  width: 10rem;
+  margin: 0 auto;
+}
