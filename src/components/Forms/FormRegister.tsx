@@ -26,7 +26,7 @@ const FormRegister = () => {
       });
       setmodalStatus({
         isOpen: true,
-        text: "Felicidades por gran puntaje, prueba tu conocimiento en alguna otra categoria :D.",
+        text: "Felicidades por tu gran puntaje, prueba tu conocimiento en alguna otra categoria :D.",
         statusCode: status,
       });
     } catch (error: any) {
