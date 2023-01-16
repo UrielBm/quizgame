@@ -1,0 +1,161 @@
+.page {
+  width: 100%;
+  overflow: hidden;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 65vh;
+  .wrapperActionButton {
+    margin-top: 2rem;
+    .actionButton {
+      text-decoration: none;
+      font-size: 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.5rem 2rem;
+      border: 1px solid var(--principal);
+      background-color: var(--principal);
+      color: var(--fourth);
+      transition: background-color ease-in-out 0.5s, color ease-in-out 0.5s;
+      &:hover {
+        cursor: pointer;
+        background-color: transparent;
+        color: var(--principal);
+      }
+    }
+  }
+}
+.wrapperInstru {
+  padding: 2rem;
+  text-align: center;
+}
+.wrapperAboutUs {
+  padding: 2rem 2rem 0 2rem;
+  text-align: center;
+  p {
+    &::first-letter {
+      font-size: 1.5rem;
+      color: var(--second);
+      font-weight: 700;
+    }
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  strong {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--principal);
+  }
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    max-width: 40rem;
+  }
+}
+.wrapperGeneral {
+  text-align: center;
+  margin-top: 1rem;
+  .generalText {
+    margin-top: 1rem;
+  }
+  .wrapperListScore {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .list {
+      width: 100%;
+      margin-top: 1rem;
+      .registerScore {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        font-size: 1.1rem;
+        .score {
+          font-weight: 900;
+          color: var(--principal);
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    max-width: 45rem;
+    margin: 2rem auto;
+  }
+}
+.showScore {
+  .phrase {
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+  }
+  .showScore__wrapperButtons {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+  .showScore__actionButton {
+    background: white;
+    cursor: pointer;
+    border: 1px solid var(--principal);
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    color: var(--principal);
+    font-weight: bold;
+    position: relative;
+    &:hover {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          var(--second),
+          var(--principal),
+          var(--third),
+          var(--principal),
+          var(--second),
+          var(--principal),
+          var(--third),
+          var(--principal)
+        );
+        background-size: 800%;
+        border-radius: 1rem;
+        filter: blur(0.5rem);
+        animation: glowing 20s linear infinite;
+      }
+    }
+  }
+}
+.wrapperLottie {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
