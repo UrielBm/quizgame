@@ -1,0 +1,90 @@
+.form {
+  margin: 2rem 0;
+  text-align: center;
+  .question {
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+  .wrapperCategories {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 70%;
+    margin: 1rem auto 0 auto;
+    .label {
+      flex-grow: 1;
+      width: 100%;
+      text-align: start;
+      margin-bottom: 1rem;
+      border: solid 1px var(--second);
+      border-radius: 2rem;
+      padding: 0.5rem 0;
+      font-size: 0.85rem;
+      background-color: transparent;
+      transition: transform ease-in-out 0.4s, background-color ease-in-out 0.4s;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        font-size: 1.2rem;
+        background-color: var(--second);
+      }
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+    label > input[type="radio"] {
+      visibility: hidden;
+    }
+    .labelChecked {
+      @extend .label;
+      background-color: var(--second);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+  }
+  .formButton {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    border: 1px solid var(--principal);
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--fourth);
+    background-color: var(--principal);
+    transition: width ease-in-out 0.4s, background-color ease-in-out 0.4s,
+      color ease-in-out 0.4s;
+    &:hover {
+      cursor: pointer;
+      width: 60%;
+      background-color: transparent;
+      color: var(--principal);
+    }
+  }
+  .error {
+    margin: 1rem 0;
+    color: var(--second);
+    font-weight: 900;
+  }
+
+  .input {
+    border: none;
+    border-bottom: 1px dashed var(--principal);
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+  .select {
+    width: 100%;
+    border: 1px solid var(--principal);
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    color: var(--principal);
+    font-size: 0.95rem;
+  }
+  @media (min-width: 768px) {
+    max-width: 45rem;
+    margin: 2rem auto;
+  }
+}
