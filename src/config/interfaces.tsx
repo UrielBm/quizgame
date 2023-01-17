@@ -82,7 +82,10 @@ export interface myQuizState {
 }
 export interface myContext {
   state: myQuiz;
-  handleGetQuizByCategory: (id: string) => void;
+  handleGetQuizByCategory: (
+    id: string,
+    setStatus: Dispatch<SetStateAction<ModalInterface>>
+  ) => void;
   handleAddPoints: (score: number) => void;
   handleGameOver: (score: number) => void;
   handleResetGame: () => void;

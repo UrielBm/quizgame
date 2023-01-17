@@ -1,9 +1,13 @@
-import { useReducer } from "react";
+import { Dispatch, SetStateAction, useReducer } from "react";
 import QuizContext from "./QuizContext";
 import QuizReducer from "./QuizReducer";
 import { useNavigate } from "react-router-dom";
 import { ADD_POINTS, GAME_OVER, GET_QUIZ, RESET_GAME } from "../config";
-import { childrenProps, myQuizState } from "../config/interfaces";
+import {
+  childrenProps,
+  ModalInterface,
+  myQuizState,
+} from "../config/interfaces";
 import clienteAxios from "../config/axios";
 
 const QuizState = (props: childrenProps) => {
@@ -17,17 +21,28 @@ const QuizState = (props: childrenProps) => {
     step: 0,
   };
   const [state, dispatch] = useReducer(QuizReducer, initialState);
-  const handleGetQuizByCategory = async (category: string) => {
+  const handleGetQuizByCategory = async (
+    category: string,
+    setmodalStatus: Dispatch<SetStateAction<ModalInterface>>
+  ) => {
     try {
       const { data } = await clienteAxios.get(`getquiz/${category}`);
-      dispatch({
-        type: GET_QUIZ,
-        payload: {
-          category: category,
-          data: data,
-        },
-      });
-    } catch (error) {}
+      data.length > 0
+        ? dispatch({
+            type: GET_QUIZ,
+            payload: {
+              category: category,
+              data: data,
+            },
+          })
+        : setmodalStatus({
+            isOpen: true,
+            text: "upps..., lo sentimos al parecer aun no hay preguntas para esta categoria :/, prueba más tarde",
+            statusCode: 404,
+          });
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleAddPoints = (score: number) => {
     dispatch({
