@@ -36,6 +36,7 @@
   color: var(--principal);
   font-size: 1.5rem;
   padding: 1rem 1rem 0 0;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
@@ -47,5 +48,16 @@
 .modal__wrapperLottie {
   width: 100%;
   margin: 0 auto;
-  max-width: 25rem;
+  max-width: 17rem;
+}
+
+.modal__scores {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--principal);
+  font-weight: 700;
+  &:visited {
+    color: var(--fifth);
+  }
 }
