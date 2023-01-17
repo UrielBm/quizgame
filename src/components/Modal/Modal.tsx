@@ -18,7 +18,7 @@ const Modal = ({ text, statusCode }: myModalInterface) => {
         <img src={Logo} className="modalLogo" alt="logo" />
         <div>
           <p>{text}</p>
-          <div>
+          <div className="modal__wrapperLottie">
             <Lottie
               animationData={statusCode === 200 ? WinnerLuttie : ErrorLuttie}
               loop={true}
