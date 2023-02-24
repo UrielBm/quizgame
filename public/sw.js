@@ -11,63 +11,15 @@ const INMUTABLE_CACHE = "cache-inmutable-v1";
 const DYNAMIC_CACHE = "cache-dynamic-v1";
 
 const APP_SHELL_STATIC = [
-  // "/",
   "/favicon.ico",
   "/index.html",
-  // "/src/main.tsx",
-  // "/src/index.css",
-  // "/src/config/index.ts",
-  // "/src/config/axios.ts",
-  // "/src/context/QuizState.tsx",
-  // "/src/layout/Layout.tsx",
-  // "/src/Pages/Home.tsx",
-  // "/src/Pages/AboutUs.tsx",
-  // "/src/Pages/ScorePage.tsx",
-  // "/src/Pages/PlayBoard.tsx",
-  // "/src/Pages/ShowScore.tsx",
-  // "/src/routes/PrivateRoute.tsx",
-  // "/src/context/QuizContext.tsx",
-  // "/src/context/QuizReducer.tsx",
-  // "/src/components/Title/Title.tsx",
-  // "/src/components/Forms/index.tsx",
-  // "/src/hooks/useGetPharse.tsx",
-  // "/src/components/Footer/Footer.tsx",
-  // "/src/components/Forms/FormQuestion.tsx",
-  // "/src/components/Forms/FormRegister.tsx",
-  // "/src/assets/lotties/categories/general.json?import",
   "/pwa-192x192.png",
-  // "/src/assets/logo.svg?import",
-  // "/src/config/ValidateFoms.tsx",
-  // "/src/hooks/useGetScores.tsx",
-  // "/src/components/Spinner/Spinner.tsx",
-  // "/src/components/Modal/Modal.tsx",
-  // "/src/components/Timer/Timer.tsx",
-  // "/src/assets/lotties/error.json?import",
-  // "/src/assets/lotties/winner.json?import",
-  // "/src/assets/logo.svg",
   "/registerSW.js",
   "/manifest.webmanifest",
   "/service/sw-helpers.js",
   "/service/sw-db.js",
 ];
 const APP_SHELL_INMUTABLE = [
-  // "/@vite/client",
-  // "/@react-refresh",
-  // "/@id/__x00__react/jsx-dev-runtime",
-  // "/@vite-plugin-pwa/pwa-entry-point-loaded",
-  // "/node_modules/.vite/deps/react.js",
-  // "/node_modules/vite/dist/client/env.mjs",
-  // "/node_modules/animate.css/animate.css",
-  // "/node_modules/.vite/deps/axios.js?v=cdec6653",
-  // "/node_modules/.vite/deps/chunk-TWLJ45QX.js?v=cdec6653",
-  // "/node_modules/.vite/deps/chunk-UWDTMQLH.js?v=cdec6653",
-  // "/node_modules/.vite/deps/formik.js?v=cdec6653",
-  // "/node_modules/.vite/deps/lottie-react.js?v=cdec6653",
-  // "/node_modules/.vite/deps/react-dom_client.js?v=cdec6653",
-  // "/node_modules/.vite/deps/react-router-dom.js?v=cdec6653",
-  // "/node_modules/.vite/deps/react.js?v=cdec6653",
-  // "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=cdec6653",
-  // "/node_modules/.vite/deps/yup.js?v=cdec6653",
   "https://fonts.googleapis.com/css2?family=Raleway:wght@300;700;900&family=Ultra&display=swap",
   "https://fonts.gstatic.com/s/raleway/v28/1Ptug8zYS_SKggPNyC0ITw.woff2",
   "https://fonts.gstatic.com/s/ultra/v19/zOLy4prXmrtY-uT9wrI.woff2",
@@ -99,15 +51,16 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  console.log(event.url);
-  return event;
-  // let response;
-  // if (
-  //   event.request.url.includes(
-  //     "https://backquizgame-production-395c.up.railway.app/"
-  //   )
-  // ) {
-  //   response = updateApiResponse(DYNAMIC_CACHE, event.request);
+  let response;
+  if (
+    event.request.url.includes(
+      "https://backquizgame-production.up.railway.app/"
+    )
+  ) {
+    response = updateApiResponse(DYNAMIC_CACHE, event.request);
+  } else {
+    response = event.request;
+  }
   // } else if (event.request.url.includes("/assets/lotties/categories/")) {
   //   response = responseLotties(event.request);
   // } else {
@@ -122,7 +75,7 @@ self.addEventListener("fetch", (event) => {
   //     }
   //   });
   // }
-  // event.respondWith(response);
+  event.respondWith(response);
 });
 
 // tareas asíncronas
