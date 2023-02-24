@@ -1,7 +1,7 @@
 # Encuestados
 
 Es una Progressive Web Application elaborado con Vite, React y diversas librerías, conciste en un juego de 10 preguntas organizado por diferentes categorias,
-también cuenta con un apatado de puntajes para ver quien es todo un genio.
+también cuenta con un apartado de puntajes para ver quien es todo un genio.
 
 Este proyecto fue creado para el bootcamp Front de código Facilito con fecha de entrega 22 de enero del 2023.
 
