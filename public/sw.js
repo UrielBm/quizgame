@@ -49,9 +49,6 @@ const APP_SHELL_STATIC = [
   "/manifest.webmanifest",
   "/service/sw-helpers.js",
   "/service/sw-db.js",
-  "/assets/logo-771736ee.svg",
-  "/assets/index-1960123e.css",
-  "/assets/index-b3f1e195.js",
 ];
 const APP_SHELL_INMUTABLE = [
   // "/@vite/client",
