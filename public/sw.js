@@ -51,16 +51,25 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  // let response;
-  // if (
-  //   event.request.url.includes(
-  //     "https://backquizgame-production.up.railway.app/"
-  //   )
-  // ) {
-  //   response = updateApiResponse(DYNAMIC_CACHE, event.request);
-  // } else {
-  //   response = event.request;
-  // }
+  let response;
+  if (
+    event.request.url.includes(
+      "https://backquizgame-production.up.railway.app/"
+    )
+  ) {
+    response = updateApiResponse(DYNAMIC_CACHE, event.request);
+  } else {
+    response = caches.match(event.request).then((res) => {
+      if (res) {
+        updateCacheStatic(STATIC_CACHE, event.request, APP_SHELL_INMUTABLE);
+        return res;
+      } else {
+        return fetch(event.request).then((newResponse) => {
+          return newResponse;
+        });
+      }
+    });
+  }
   // } else if (event.request.url.includes("/assets/lotties/categories/")) {
   //   response = responseLotties(event.request);
   // } else {
@@ -75,7 +84,7 @@ self.addEventListener("fetch", (event) => {
   //     }
   //   });
   // }
-  event.respondWith(event.request);
+  event.respondWith(response);
 });
 
 // tareas asíncronas
