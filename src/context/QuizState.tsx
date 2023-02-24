@@ -41,7 +41,11 @@ const QuizState = (props: childrenProps) => {
             statusCode: 404,
           });
     } catch (error) {
-      console.log(error);
+      setmodalStatus({
+        isOpen: true,
+        text: "upps..., lo sentimos al parecer aun no hay preguntas para esta categoria :/, prueba más tarde",
+        statusCode: 0,
+      });
     }
   };
   const handleAddPoints = (score: number) => {
