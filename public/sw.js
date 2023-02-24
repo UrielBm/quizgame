@@ -76,7 +76,7 @@ self.addEventListener("fetch", (event) => {
   //     }
   //   });
   // }
-  event.respondWith(event);
+  return event;
 });
 
 // tareas asíncronas
