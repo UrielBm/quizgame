@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import MexicoLuttie from "./../assets/lotties/mexico.json";
-import CodeLuttie from "./../assets/lotties/code.json";
-import AnimeLuttie from "./../assets/lotties/anime.json";
-import GamerLuttie from "./../assets/lotties/gamer.json";
-import MusicLuttie from "./../assets/lotties/music.json";
-import GeneralLuttie from "./../assets/lotties/general.json";
+import MexicoLuttie from "./../assets/lotties/categories/mexico.json";
+import CodeLuttie from "./../assets/lotties/categories/code.json";
+import AnimeLuttie from "./../assets/lotties/categories/anime.json";
+import GamerLuttie from "./../assets/lotties/categories/gamer.json";
+import MusicLuttie from "./../assets/lotties/categories/music.json";
+import GeneralLuttie from "./../assets/lotties/categories/general.json";
 import { interfaceLottie, interfacePharese } from "./../config/interfaces";
 const useGetPharse = (score: number = 0, category: string = "") => {
   const [phrase, setphrase] = useState("");
