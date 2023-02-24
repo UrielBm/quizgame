@@ -59,16 +59,8 @@ self.addEventListener("fetch", (event) => {
   ) {
     response = updateApiResponse(DYNAMIC_CACHE, event.request);
   } else {
-    response = caches.match(event.request).then((res) => {
-      if (res) {
-        updateCacheStatic(STATIC_CACHE, event.request, APP_SHELL_INMUTABLE);
-        return res;
-      } else {
-        return fetch(event.request).then((newResponse) => {
-          return newResponse;
-        });
-      }
-    });
+    console.log(event.request);
+    response = event.request;
   }
   // } else if (event.request.url.includes("/assets/lotties/categories/")) {
   //   response = responseLotties(event.request);
