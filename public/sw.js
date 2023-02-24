@@ -57,10 +57,10 @@ self.addEventListener("fetch", (event) => {
       "https://backquizgame-production.up.railway.app/"
     )
   ) {
-    response = updateApiResponse(DYNAMIC_CACHE, event.request);
+    updateApiResponse(DYNAMIC_CACHE, event.request);
+    console.log("back", event.request);
   } else {
-    console.log(event.request);
-    response = event.request;
+    console.log("todo lo demás", event.request);
   }
   // } else if (event.request.url.includes("/assets/lotties/categories/")) {
   //   response = responseLotties(event.request);
@@ -76,7 +76,7 @@ self.addEventListener("fetch", (event) => {
   //     }
   //   });
   // }
-  event.respondWith(response);
+  event.respondWith(event.request);
 });
 
 // tareas asíncronas
