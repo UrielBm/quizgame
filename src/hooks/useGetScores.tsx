@@ -12,7 +12,7 @@ const useGetScores = () => {
       setList(data);
       setisLoading(false);
     } catch (error) {
-      console.log(error);
+      setisLoading(false);
     }
   };
   return { isLoading, list, handleGetTopScores };
