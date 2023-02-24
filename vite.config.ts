@@ -6,8 +6,16 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   plugins: [react(),
     VitePWA({  
-      registerType: 'prompt',  
+      injectRegister: 'auto',
+      strategies: 'injectManifest',
+      injectManifest: {
+        injectionPoint: undefined
+      },
+      filename: 'sw.js',  
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],  
+      // devOptions: {
+      //   enabled: false
+      // },
       manifest: {  
         name: 'Encuestados',  
         short_name: 'QuizGame',  
