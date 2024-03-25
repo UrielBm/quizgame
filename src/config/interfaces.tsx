@@ -6,6 +6,7 @@ export interface interfacePharese {
   "63c4d914b3ab51db657dcfeb": string;
   "63bc7093b3ab51db657dcfe7": string;
   "63c4d904b3ab51db657dcfe9": string;
+  "66018d3caa60cd85cc08c8ee": string;
 }
 export interface interfaceLottie {
   "63bc6dd6bd70825151937290": any;
@@ -13,6 +14,7 @@ export interface interfaceLottie {
   "63c4d914b3ab51db657dcfeb": any;
   "63bc7093b3ab51db657dcfe7": any;
   "63c4d904b3ab51db657dcfe9": any;
+  "66018d3caa60cd85cc08c8ee": any;
 }
 export interface interfaceCategories {
   category: string;
