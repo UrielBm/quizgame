@@ -16,7 +16,7 @@ const useGetPharse = (score: number = 0, category: string = "") => {
     "63c4d914b3ab51db657dcfeb": `Se ve que que eres un gran conocedor del anime, todo un otaku en potencia, feliciades. Puntaje: ${score}`,
     "63bc7093b3ab51db657dcfe7": `Eres el maestro del overkill, un puntaje de ${score}, ningun niño rata lo obtiene.`,
     "63c4d904b3ab51db657dcfe9": `Tus gustos musicales van más alla de lo esperado con tu puntaje de ${score} tiene un gran gusto musical.`,
-    "66018d3caa60cd85cc08c8ee": `Eres un maestro de las finanzas, dueño de la 'black card' con un puntaje de ${score}, tu GAT es del 0%.`,
+    "66018d3caa60cd85cc08c8ee": `Eres un maestro de las finanzas, dueño de la 'black card' con un puntaje de ${score}, tu CAT es del 0%.`,
   };
   const PhraseMiddleScore: interfacePharese = {
     "63bc6dd6bd70825151937290": `Hiciste un buen desempeño,tu puntaje es: ${score}, se ve que bailas bien el payaso de rodeo y te salen los gritos del mariachi`,
