@@ -32,8 +32,8 @@ const FormRegister = () => {
     } catch (error: any) {
       setmodalStatus({
         isOpen: true,
-        text: "upps..., ocurrio un problema al registrar tu puntaje. Lo sentimos mucho :/",
-        statusCode: error.response.status,
+        text: "upps..., al parecer no hay conexión, intentaremos registrarlo más tarde  :/",
+        statusCode: 503,
       });
     }
   };
